@@ -1,0 +1,2 @@
+*.csharp linguist-detectable=true
+*.cplus linguist-detectable=true
