@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B106A329-A47C-4D17-8BD0-4BB530AF060B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GorselProje</RootNamespace>
+    <AssemblyName>GorselProje</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bookicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\ZedGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph.resources, Version=5.1.5.28844, Culture=tr, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\ZedGraph.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph.Web, Version=5.1.5.29221, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\ZedGraph.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Emanet.cs" />
+    <Compile Include="Business\Kitap.cs" />
+    <Compile Include="Business\Ogrenci.cs" />
+    <Compile Include="DataAccess\Database.cs" />
+    <Compile Include="Extra\VerticalLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Presentation\AnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\AnaSayfa.Designer.cs">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\EmanetListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\EmanetListe.Designer.cs">
+      <DependentUpon>EmanetListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\EmanetPencere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\EmanetPencere.Designer.cs">
+      <DependentUpon>EmanetPencere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Grafik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Grafik.Designer.cs">
+      <DependentUpon>Grafik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\inputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\inputBox.Designer.cs">
+      <DependentUpon>inputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\KitapListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\KitapListe.Designer.cs">
+      <DependentUpon>KitapListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\KitapPencere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\KitapPencere.Designer.cs">
+      <DependentUpon>KitapPencere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\OgrenciListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\OgrenciListe.Designer.cs">
+      <DependentUpon>OgrenciListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\OgrenciPencere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\OgrenciPencere.Designer.cs">
+      <DependentUpon>OgrenciPencere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\AnaSayfa.resx">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\EmanetListe.resx">
+      <DependentUpon>EmanetListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\EmanetPencere.resx">
+      <DependentUpon>EmanetPencere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Grafik.resx">
+      <DependentUpon>Grafik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\inputBox.resx">
+      <DependentUpon>inputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\KitapListe.resx">
+      <DependentUpon>KitapListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\KitapPencere.resx">
+      <DependentUpon>KitapPencere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\OgrenciListe.resx">
+      <DependentUpon>OgrenciListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\OgrenciPencere.resx">
+      <DependentUpon>OgrenciPencere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\grafik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\emanet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\emanetekle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\emanetiade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\kitap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\kitapduzenle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\kitapsil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\uye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\uyeduzenle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\uyeler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\uyesil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\yenikitap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\yeniuye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ikon\buyutec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bookicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
